@@ -50,7 +50,7 @@ class Cmitienda extends CI_Controller {
         );
         $count=sizeof($this->Mmitienda->ingresar($datos));
         if($count>0){
-            $this->load->view('header');
+          $this->load->view('header');
             $this->load->view('menu');
             $this->load->view('panel_inicial');
             $this->load->view('footer');

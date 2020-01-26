@@ -82,16 +82,21 @@ class Cproducto extends CI_Controller {
         $this->load->view('menu');
         $this->load->view('mnj_eli_pro');
         $this->load->view('footer');
-        
-
-        
-
-        
     }
     function eliminar_producto(){
         $id_producto=$this->uri->segment(3);
         $this->Mmitienda->eliminar_producto($id_producto);
         $this->ver_productos();
+    }
+    function buscar_producto(){
+        
+        $dato=trim($_POST['valor_bus']);   
+        $producto=array('lista_productos'=>$this->Mmitienda->buscar_producto($dato));
+        $this->load->view('header');
+        $this->load->view('menu');
+        $this->load->view('lista_productos',$producto);
+        $this->load->view('footer');
+        
     }
 }
 ?>

@@ -39,6 +39,13 @@ class Mmitienda extends CI_Model{
         $this->db->where('id_producto',$id_producto);
         $this->db->delete('producto');
     }
+    public function buscar_producto($dato){
+     $this->db->select('*');
+        $this->db->from('producto');
+        $this->db->where('nombre_producto like','%'.$dato.'%');
+        $resultado=$this->db->get();
+        return $resultado->result();
+    }
 }
 
 ?>

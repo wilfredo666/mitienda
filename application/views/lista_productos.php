@@ -1,16 +1,16 @@
 <div class="vista-dere">
-    <form action="">
         <div id="busc-producto">
             <nav>
                 <ul>
-                    <li><input class="input-text" type="text"></li>
-                    <li><input class="btn-green" type="submit" value="Buscar"></li>
-                    <li style="float: right;">
-                        <a  href="http://localhost/mitienda/index.php/Cproducto/f_registro_producto"><input class="btn-blue" type="button" value="Nuevo"></a></li>
+                    <form method="post" action="http://localhost/mitienda/index.php/Cproducto/buscar_producto">
+                        <li><input class="input-text" type="text" placeholder="Buscar producto" name="valor_bus"></li>
+                        <li><input class="btn-green" type="submit" value="Buscar"></li>
+                        <li style="float: right;"><a  href="http://localhost/mitienda/index.php/Cproducto/f_registro_producto"><input class="btn-blue" type="button" value="Nuevo"></a></li>
+                    </form>
+                    
                 </ul>
             </nav>
         </div>
-    </form>
 
     <div id="lista-productos">
         <table>

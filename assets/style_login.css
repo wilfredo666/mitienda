@@ -274,13 +274,16 @@ label.checkbtn{
 }
 /*Estilos listas productos*/
 /*primera seccion*/
+
+#busc-producto nav{
+    margin: 30px;
+}
+
 #busc-producto nav ul li{
     list-style: none;
     display: inline-block;
 }
-#busc-producto nav{
-    padding: 30px;
-}
+
 
 /*estilos tabla*/
 table{
@@ -295,7 +298,6 @@ table{
     color: #fff;
     font-family: sans-serif;
     font-size: 20px;
-
 }
 .tb-head tr td{
     margin: 0;
