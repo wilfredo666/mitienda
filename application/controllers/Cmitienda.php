@@ -12,8 +12,8 @@ class Cmitienda extends CI_Controller {
 
     function index()
     {
-        $this->load->view('login.php');
-        $this->load->view('footer.php');
+        $this->load->view('login');
+        $this->load->view('footer');
     }
     function form_registro_usuario(){
         $this->load->view('registro');
@@ -52,6 +52,7 @@ class Cmitienda extends CI_Controller {
         if($count>0){
             $this->load->view('header');
             $this->load->view('menu');
+            $this->load->view('panel_inicial');
             $this->load->view('footer');
         }else{
             echo "error de acceso";

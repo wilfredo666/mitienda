@@ -23,6 +23,22 @@ class Mmitienda extends CI_Model{
         $resultado=$this->db->get();
         return $resultado->result();
     }
+    public function f_edi_producto($id_producto){
+        $this->db->select('*');
+        $this->db->from('producto');
+        $this->db->where('id_producto',$id_producto);
+        $resultado=$this->db->get();
+        return $resultado->result();
+    }
+    public function g_edi_producto($datos,$id_producto){
+        $this->db->where('id_producto',$id_producto);
+        $this->db->update('producto',$datos);
+        
+    }
+    public function eliminar_producto($id_producto){
+        $this->db->where('id_producto',$id_producto);
+        $this->db->delete('producto');
+    }
 }
 
 ?>

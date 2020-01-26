@@ -1,6 +1,6 @@
 <div class="vista-dere">
     <div class="form">
-        <form action="http://localhost/mitienda/index.php/Cmitienda/registrar_producto" method="post">
+        <form action="http://localhost/mitienda/index.php/Cproducto/registrar_producto" method="post">
             <h1>REGISTRO DE PRODUCTO</h1>
             <p>(*)DEBE LLENAR TODOS LOS CAMPOS</p>
             <input type="text" placeholder="Nombre producto" name="nom_producto">

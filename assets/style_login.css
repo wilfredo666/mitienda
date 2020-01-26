@@ -139,6 +139,13 @@ label.checkbtn{
     float: left;
 }
 
+/*Estilos panel inicial*/
+.vista-dere #panel {
+    background-color: aqua;
+    height: 300px;
+    border: solid 1px red;
+}
+
 /*Estilos formulario*/
 .form h2{
     text-align:center;
@@ -203,7 +210,7 @@ label.checkbtn{
     padding: 5px;
 }
 .btn-blue{
-    width: 100px;
+    width: 120px;
     background-color: rgb(41, 171, 226);
     color: #fff;
     border: 0;
@@ -212,6 +219,50 @@ label.checkbtn{
     border-radius: 5px;
     padding: 5px;
 }
+.btn-red{
+    width: 120px;
+    background-color: red;
+    color: #fff;
+    border: 0;
+    font-family:sans-serif;
+    font-size: 20px;
+    border-radius: 5px;
+    padding: 5px;
+}
+.btn-blue-min{
+    width: 60px;
+    background-color: rgb(41, 171, 226);
+    color: #fff;
+    border: 0;
+    font-family:sans-serif;
+    font-size: 15px;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 2px;
+}
+.btn-green-min{
+    width: 60px;
+    background-color: green;
+    color: #fff;
+    border: 0;
+    font-family:sans-serif;
+    font-size: 15px;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 2px;
+}
+.btn-red-min{
+    width: 60px;
+    background-color: red;
+    color: #fff;
+    border: 0;
+    font-family:sans-serif;
+    font-size: 15px;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 2px;
+}
+
 /*Estilo input*/
 .input-text{
     padding:0px;
@@ -255,4 +306,19 @@ table{
 /*segunda seccion*/
 #lista-productos{
     padding: 30px;
+}
+
+/*Estilos mensaje de advertencia*/
+#mensaje{
+    margin: 50px 50px 100px 400px;
+    text-align: center;
+    width: 400px;
+    height: 200px;
+    background-color: rgb(242, 242, 242);
+    font-family: sans-serif;
+    font-weight: bold;
+    box-shadow: 6px 6px 12px rgb(118, 106, 106);
+}
+#mensaje h2{
+    color: red;
 }
