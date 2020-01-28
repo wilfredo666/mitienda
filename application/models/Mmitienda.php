@@ -6,6 +6,14 @@ class Mmitienda extends CI_Model{
         
         $this->db->insert("usuario",$datos);
     }
+    public function datos_usuario($email,$pass){
+        $this->db->select('*');
+        $this->db->from('usuario');
+        $this->db->where('email_usuario',$email);
+        $this->db->where('pass_usuario',$pass);
+        $resultado=$this->db->get();
+        return $resultado->result();
+    }
     public function ingresar($datos){
         $this->db->select('*');
         $this->db->from('usuario');
@@ -38,6 +46,13 @@ class Mmitienda extends CI_Model{
     public function eliminar_producto($id_producto){
         $this->db->where('id_producto',$id_producto);
         $this->db->delete('producto');
+    }
+    public function detalle_producto($id_producto){
+        $this->db->select('*');
+        $this->db->from('producto');
+        $this->db->where('id_producto',$id_producto);
+        $resultado=$this->db->get();
+        return $resultado->result();  
     }
     public function buscar_producto($dato){
      $this->db->select('*');

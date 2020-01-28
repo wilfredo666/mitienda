@@ -1,3 +1,13 @@
+<?php
+    $user_session=$this->session->userdata('email_usuario');
+    if($user_session!=""){
+        
+    }
+    else
+    {
+        header('location:http://localhost/mitienda');    
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -13,8 +23,8 @@
             </label>
             <label class="logo">Sistema C&V</label>
             <ul>
-                <li><a href="#">Perfil</a></li>
-                <li><a href="http://localhost/mitienda">Salir</a></li>
+                <li><a href="http://localhost/mitienda/index.php/Cmitienda/perfil">Perfil</a></li>
+                <li><a href="http://localhost/mitienda/index.php/Cmitienda/salir">Salir</a></li>
             </ul>
         </nav>
 <br>

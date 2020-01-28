@@ -43,7 +43,7 @@
                     <td><?php echo $precioC;?></td>
                     <td><?php echo $preciaV;?></td>
                     <td><?php echo $fecha;?></td>
-                    <td><a href=""><input class="btn-blue-min" type="button" value="Ver"></a></td>
+                    <td><a href="http://localhost/mitienda/index.php/Cproducto/detalle_producto/<?php echo $id_producto;?>"><input class="btn-blue-min" type="button" value="Ver"></a></td>
                     <td><a href="http://localhost/mitienda/index.php/Cproducto/f_editar_producto/<?php echo $id_producto;?>"><input class="btn-green-min" type="button" value="Editar"></a></td>
                     <td><a href="http://localhost/mitienda/index.php/Cproducto/f_eliminar_producto/<?php echo $id_producto;?>"><input class="btn-red-min" type="button" value="Eliminar"></a></td>
                 </tr>

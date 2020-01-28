@@ -88,15 +88,22 @@ class Cproducto extends CI_Controller {
         $this->Mmitienda->eliminar_producto($id_producto);
         $this->ver_productos();
     }
+    function detalle_producto(){
+        $id_producto=$this->uri->segment(3);
+        $datos=array('detalle_producto'=>$this->Mmitienda->detalle_producto($id_producto));
+        $this->load->view('header');
+        $this->load->view('menu');
+        $this->load->view('detalle_producto',$datos);
+        $this->load->view('footer');
+    }
     function buscar_producto(){
-        
         $dato=trim($_POST['valor_bus']);   
         $producto=array('lista_productos'=>$this->Mmitienda->buscar_producto($dato));
         $this->load->view('header');
         $this->load->view('menu');
         $this->load->view('lista_productos',$producto);
         $this->load->view('footer');
-        
+
     }
 }
 ?>

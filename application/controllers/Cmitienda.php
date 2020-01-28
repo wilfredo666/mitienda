@@ -33,11 +33,8 @@ class Cmitienda extends CI_Controller {
             'email_usuario'=>$correo,
             'pass_usuario'=>$clave,
         );
-
         $this->Mmitienda->registrar_usuario($datos);
-
         header('location:http://localhost/mitienda');
-
 
     }
     function ingresar(){
@@ -48,15 +45,42 @@ class Cmitienda extends CI_Controller {
             'email_usuario'=>$correo,
             'pass_usuario'=>$clave
         );
+        $this->session->set_userdata($datos);
+
         $count=sizeof($this->Mmitienda->ingresar($datos));
-        if($count>0){
-          $this->load->view('header');
-            $this->load->view('menu');
-            $this->load->view('panel_inicial');
-            $this->load->view('footer');
+
+        $this->form_validation->set_rules('correo', 'Contraseña', 'required');
+        $this->form_validation->set_rules('clave', 'Contraseña', 'required');
+        if($this->form_validation->run()==false){
+            header('location:http://localhost/mitienda');
         }else{
-            echo "error de acceso";
+            if($count>0){
+                $this->load->view('header');
+                $this->load->view('menu');
+                $this->load->view('panel_inicial');
+                $this->load->view('footer');
+            }else{
+                $error=array('mensaje'=>"Datos incorrectos, vuelve a intentarlo !!!");
+                $this->load->view('login',$error);
+                $this->load->view('footer');
+            }
         }
+
     }
-    
+
+    function perfil(){
+        $this->load->view('header');
+        $this->load->view('menu');
+
+        $email=$this->session->email_usuario;
+        $pass=$this->session->pass_usuario;
+
+        $datos=array('datos_usuario'=>$this->Mmitienda->datos_usuario($email,$pass));
+        $this->load->view('perfil',$datos);
+        $this->load->view('footer');
+    }
+    function salir(){
+        $this->session->sess_destroy();
+        header('location:http://localhost/mitienda');
+    }
 }
