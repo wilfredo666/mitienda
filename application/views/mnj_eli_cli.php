@@ -9,7 +9,7 @@
 			<h2>(*)ESTA SEGURO DE ELIMINAR ESTE CLIENTE ?</h2>
 			<br>
 			<a href="http://localhost/mitienda/index.php/Ccliente/eliminar_cliente/<?php echo $id_cliente;?>"><input class="btn-blue" type="submit" value="ELIMINAR"></a>
-			<a href="http://localhost/mitienda/index.php/Cproducto/ver_productos"><input class="btn-red" type="submit" value="CANCELAR"></a>
+			<a href="http://localhost/mitienda/index.php/Ccliente/ver_cliente"><input class="btn-red" type="button" value="CANCELAR"></a>
 		</div>
 
 </div>

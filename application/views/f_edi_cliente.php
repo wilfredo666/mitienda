@@ -8,16 +8,19 @@ $direccion_cli=$cliente[0]->direccion_cli;
 
 ?>
    <div class="vista-dere">
-    <div class="form">
+    <div class="form-reg">
         <form action="http://localhost/mitienda/index.php/Ccliente/g_edi_cliente/<?php echo $id_cliente;?>" method="post">
-            <h1>EDITAR CLIENTE</h1>
+            <h2>EDITAR CLIENTE</h2>
             <p>(*)DEBE LLENAR TODOS LOS CAMPOS</p>
             <input type="text" name="nom_cliente" value="<?php echo $nombre_cliente;?>">
             <input type="text" name="apellido" value="<?php echo $apellido;?>">
             <input type="number"  name="ci_nit" value="<?php echo $ci_nit;?>">
             <input type="number"  name="celular_cli" value="<?php echo $celular_cli;?>">
             <input type="text"  name="direccion_cli" value="<?php echo $direccion_cli;?>">
-            <input type="submit" value="GUARDAR">
+            <div class="sec-btn">
+                <input type="submit" value="GUARDAR">
+                <input type="button" onclick="history.back()" style="background-color: red;" value="CANCELAR">
+            </div>
         </form>  
     </div>
 

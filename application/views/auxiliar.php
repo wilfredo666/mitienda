@@ -1,16 +1,24 @@
+
 <?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+date_default_timezone_set('America/La_Paz');
+
+class Ccompra extends CI_Controller {
+    function __construct(){
+        parent:: __construct(); 
+        $this->load->model('Mcompra');
+        $this->load->helper('url');
+        $this->load->library('form_validation');
+    }
 
 
     
-    }
-    function buscar_cliente(){
-        
-        $dato=trim($_POST['valor_bus']);   
-        $cliente=array('lista_clientes'=>$this->Mmitienda->buscar_cliente($dato));
-        $this->load->view('header');
-        $this->load->view('menu');
-        $this->load->view('lista_clientes',$cliente);
-        $this->load->view('footer');
-        
-    }
+
+    
+
+
+
+           
+
+}
 ?>

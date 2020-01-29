@@ -1,3 +1,12 @@
+<?php
+    $user_session=$this->session->userdata('email_usuario');
+    if($user_session!=""){
+        header('localhost/mitienda/index.php/Cmitienda/ingresar'); 
+    }else{
+        
+    }
+ 
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -20,10 +29,10 @@
 		<br>
 		<div class="form">
 		    <form action="http://localhost/mitienda/index.php/Cmitienda/ingresar" method="post">
-			<h2>(*)DEBE LLENAR TODOS LOS CAMPOS</h2>
+			<h3>(*)DEBE LLENAR TODOS LOS CAMPOS</h3>
 			<input type="email" placeholder="Escriba su correo" name="correo" required>
 			<input type="password" placeholder="Escriba su contraseña" name="clave" required>
-			<h2>MOSTRAR CONTRASEÑA</h2>
+			<h3>MOSTRAR CONTRASEÑA</h3>
 			<p style="color: red;"><?php
                     if(isset($mensaje)){
                         echo $mensaje;

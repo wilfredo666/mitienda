@@ -34,6 +34,7 @@ $direccion_cli=$detalle_cliente[0]->direccion_cli;
 
         </table>
         <br>
+        <a href="javascript:history.back()"> << Volver Atrás</a>
     </div>
 
 </div>

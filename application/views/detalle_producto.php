@@ -38,6 +38,7 @@ $hora=$detalle_producto[0]->hora;
             </tr>
         </table>
         <br>
+        <a href="javascript:history.back()"> << Volver Atrás</a>
     </div>
 
 </div>

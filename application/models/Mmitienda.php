@@ -61,6 +61,13 @@ class Mmitienda extends CI_Model{
         $resultado=$this->db->get();
         return $resultado->result();
     }
+     public function option_producto($id_producto){
+     $this->db->select('nombre_producto');
+        $this->db->from('producto');
+        $this->db->where('id_producto',$id_producto);
+        $resultado=$this->db->get();
+        return $resultado->result();
+    }
 }
 
 ?>

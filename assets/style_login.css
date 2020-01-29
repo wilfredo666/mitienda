@@ -143,18 +143,14 @@ label.checkbtn{
 #perfil-usuario{
     margin-left: 200px;
     margin-right: 350px;
-    color: white;
-    background-color: #2e2828;
     text-align: center;
     border-radius: 10px;
 }
 #perfil-usuario img{
     width: 200px;
     border-radius: 10px;
-    
 }
 #perfil-usuario p{
-    color: green;
     font-size: 20px;
 }
 #perfil-usuario table{
@@ -165,51 +161,55 @@ label.checkbtn{
 }
 /*Estilos panel inicial*/
 .vista-dere #panel {
-    background-color: aqua;
     height: 300px;
-    border: solid 1px red;
+    text-align: center;
+}
+.vista-dere #panel h1{
+    color: rgb(0, 113, 188);
+    line-height: 300px;
 }
 
 /*Estilos formulario*/
 .form h2{
     text-align:center;
     color:#090909;
-    margin-bottom:20px;
 }
 .form form{
+    text-align: center;
     margin:auto;
-    width:50%;
+    width:300px;
     max-width:500px;
     background:#F3F3F3;
     opacity:0.8;
     padding:50px;
-    border:3px solid rgba(0,0,0,0.2);
-    border-radius:20px;
+    border-radius:10px;
+    box-shadow: 6px 6px 12px rgb(118, 106, 106);
 }
 .form input{
-    display:block;
-    padding:10px;
-    width:100%;
-    margin:30px 0;
+    padding:8px;
+    width:250px;
+    margin:10px;
     font-size:20px;
     border-radius: 5px;
+    border: solid 1px black;
 }
 .form select{
     padding: 8px;
-    width: 70%;
+    width: 250px;
     font-size: 15px;
     align-content: center;
-    border-radius: 8px;
-    margin: 0 60px 0;
+    border-radius: 5px;
+    margin: 10px;
 }
 .form input[type="submit"]{
     background:rgb(0, 113, 188);
     color: #fff;
-    font-size: 30px;
+    font-size: 20px;
     border:0;
     cursor:pointer;
     border-radius:20px;
-    margin-bottom:0;
+    margin:10px;
+    width: 200px;
 }
 .form input[type="submit"]:hover{
     opacity: 0.8;
@@ -217,22 +217,156 @@ label.checkbtn{
 .form input[type="submit"]:active{
     transform: scale(0.95);
 }
-@media[max-width:480px]{
-    .form form{
-        width:95%;
-    }
+.form h3{
+    margin: 10px;
+}
+
+/*Estilos formulario de registro*/
+.form-reg h2{
+    text-align:center;
+    color:#090909;
+}
+.form-reg form{
+    text-align: center;
+    margin:auto;
+    width:800px;
+    max-width:800px;
+    background:#F3F3F3;
+    opacity:0.8;
+    padding:50px;
+    border-radius:10px;
+    box-shadow: 6px 6px 12px rgb(118, 106, 106);
+}
+.form-reg input{
+    padding:8px;
+    width:250px;
+    margin:10px;
+    font-size:20px;
+    border-radius: 5px;
+    border: solid 1px black;
+}
+.form-reg select{
+    padding: 8px;
+    width: 270px;
+    font-size: 15px;
+    align-content: center;
+    border-radius: 5px;
+    margin: 10px;
+    border: solid 1px black;
+}
+.form-reg input[type="submit"]{
+    background:rgb(0, 113, 188);
+    color: #fff;
+    font-size: 20px;
+    border:0;
+    cursor:pointer;
+    border-radius:20px;
+    margin:10px;
+    width: 200px;
+}
+.form-reg input[type="submit"]:hover{
+    opacity: 0.8;
+}
+.form-reg input[type="submit"]:active{
+    transform: scale(0.95);
+}
+.form-reg h3{
+    margin: 10px;
+}
+.form-reg input[type="button"]{
+    background:rgb(0, 113, 188);
+    color: #fff;
+    font-size: 20px;
+    border:0;
+    cursor:pointer;
+    border-radius:20px;
+    margin:10px;
+    width: 200px;
+}
+.form-reg input[type="button"]:hover{
+    opacity: 0.8;
+}
+.form-reg input[type="button"]:active{
+    transform: scale(0.95);
+}
+.form-reg h3{
+    margin: 10px;
+}
+
+/*Estilos listas productos*/
+/*primera seccion*/
+
+#busc-producto nav{
+    margin: 30px;
+}
+
+#busc-producto nav ul li{
+    list-style: none;
+    display: inline-block;
+}
+
+
+/*estilos tabla*/
+table{
+    border: solid 1px red;
+    text-align: center;
+    width: 100%;
+    border-collapse:collapse;
+    border: none;
+}
+.tb-head{
+    background-color:rgb(0, 113, 188);
+    color: #fff;
+    font-family: sans-serif;
+    font-size: 20px;
+}
+.tb-head tr td{
+    margin: 0;
+    padding:5px;
+}
+
+/*Estilos Lista de productos*/
+/*segunda seccion*/
+#lista-productos{
+    height: 300px;
+    padding: 30px;
+    overflow: scroll;
+}
+
+/*Estilos mensaje de advertencia*/
+#mensaje{
+    margin: 50px 50px 100px 400px;
+    text-align: center;
+    width: 400px;
+    height: 200px;
+    background-color: rgb(242, 242, 242);
+    font-family: sans-serif;
+    font-weight: bold;
+    box-shadow: 6px 6px 12px rgb(118, 106, 106);
+}
+#mensaje h2{
+    color: red;
+}
+/*Estilos detalle*/
+.detalle{
+    margin: 0 100px;
+    border-radius: 10px;
+    width: 70%;
+}
+.detalle table{
+    margin: 10px;
+}
+.detalle table tr td h2{
+    color: #272323;
+}
+.detalle table tr td p{
+    font-size: 20px;
+}
+.detalle table tr{
+    text-align: left;
 }
 /*Estilos botones*/
-.btn-green{
-    width: 100px;
-    background-color:green;
-    color: #fff;
-    border: 0;
-    font-family:sans-serif;
-    font-size: 20px;
-    border-radius: 5px;
-    padding: 5px;
-}
+
 .btn-blue{
     width: 120px;
     background-color: rgb(41, 171, 226);
@@ -286,84 +420,31 @@ label.checkbtn{
     padding: 5px;
     margin: 2px;
 }
+.btn-red-max{
+    background-color: red;
+    color: #fff;
+    font-size: 30px;
+    border:0;
+    cursor:pointer;
+    border-radius:20px;
+    margin-bottom:0;
+}
 
 /*Estilo input*/
 .input-text{
     padding:0px;
     width:300px;
     height: 30px;
-    margin:0px;
     font-size:20px;
     border-radius: 5px;
 }
-/*Estilos listas productos*/
-/*primera seccion*/
-
-#busc-producto nav{
-    margin: 30px;
-}
-
-#busc-producto nav ul li{
-    list-style: none;
-    display: inline-block;
-}
-
-
-/*estilos tabla*/
-table{
-    border: solid 1px red;
-    text-align: center;
-    width: 100%;
-    border-collapse:collapse;
-    border: none;
-}
-.tb-head{
-    background-color:rgb(0, 113, 188);
+.btn-green{
+    width: 120px;
+    background-color: green;
     color: #fff;
-    font-family: sans-serif;
+    border: 0;
+    font-family:sans-serif;
     font-size: 20px;
-}
-.tb-head tr td{
-    margin: 0;
-    padding:5px;
-}
-
-/*Estilos Lista de productos*/
-/*segunda seccion*/
-#lista-productos{
-    padding: 30px;
-}
-
-/*Estilos mensaje de advertencia*/
-#mensaje{
-    margin: 50px 50px 100px 400px;
-    text-align: center;
-    width: 400px;
-    height: 200px;
-    background-color: rgb(242, 242, 242);
-    font-family: sans-serif;
-    font-weight: bold;
-    box-shadow: 6px 6px 12px rgb(118, 106, 106);
-}
-#mensaje h2{
-    color: red;
-}
-/*Estilos detalle del producto*/
-.detalle{
-    background-color: blueviolet;
-    margin: 0 100px;
-    border-radius: 10px;
-    width: 70%;
-}
-.detalle table{
-    margin: 10px;
-}
-.detalle table tr td h2{
-    color: #272323;
-}
-.detalle table tr td p{
-    font-size: 20px;
-}
-.detalle table tr{
-    text-align: left;
+    border-radius: 5px;
+    padding: 5px;
 }

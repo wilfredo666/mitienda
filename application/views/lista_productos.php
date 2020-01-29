@@ -1,18 +1,26 @@
 <div class="vista-dere">
-        <div id="busc-producto">
-            <nav>
-                <ul>
-                    <form method="post" action="http://localhost/mitienda/index.php/Cproducto/buscar_producto">
-                        <li><input class="input-text" type="text" placeholder="Buscar producto" name="valor_bus"></li>
-                        <li><input class="btn-green" type="submit" value="Buscar"></li>
-                        <li style="float: right;"><a  href="http://localhost/mitienda/index.php/Cproducto/f_registro_producto"><input class="btn-blue" type="button" value="Nuevo"></a></li>
-                    </form>
-                    
-                </ul>
-            </nav>
-        </div>
+    <div id="busc-producto">
+        <nav>
+            <ul>
+                <form method="post" action="http://localhost/mitienda/index.php/Cproducto/buscar_producto">
+                    <li><input class="input-text" type="text" placeholder="Buscar producto" name="valor_bus"></li>
+                    <li><input class="btn-green" type="submit" value="Buscar"></li>
+                    <li style="float: right;"><a  href="http://localhost/mitienda/index.php/Cproducto/f_registro_producto"><input class="btn-blue" type="button" value="Nuevo"></a></li>
+                </form>
+
+            </ul>
+        </nav>
+    </div>
 
     <div id="lista-productos">
+        <a href="http://localhost/mitienda/index.php/Cproducto/ver_productos">
+            <?php
+            if(isset($dato)){
+                echo "Listar Producto";
+            }
+            ?>
+        </a>
+
         <table>
             <thead class="tb-head">
                 <tr>
