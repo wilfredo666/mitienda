@@ -19,9 +19,9 @@ $cambio=$venta[0]->cambio_ven;
                 <option value=""><?php echo $cliente;?></option>
             </select>
             <input type="number" placeholder="Cantidad" name="cantidad" value="<?php echo $cantidad;?>" required>
-            <input type="number" placeholder="Total" name="total" value="<?php echo $total;?>" required>
-            <input type="number" placeholder="Pago" name="pago" value="<?php echo $pago;?>" required>
-            <input type="number" placeholder="Cambio" name="cambio" value="<?php echo $cambio;?>" required>
+            <input type="number" placeholder="Total" name="total" value="<?php echo $total;?>" required step=".01">
+            <input type="number" placeholder="Pago" name="pago" value="<?php echo $pago;?>" required step=".01">
+            <input type="number" placeholder="Cambio" name="cambio" value="<?php echo $cambio;?>" required step=".01">
             <div class="sec-btn">
                 <input type="submit" value="GUARDAR">
                 <input type="button" onclick="history.back()" style="background-color: red;" value="CANCELAR">

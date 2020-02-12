@@ -41,7 +41,11 @@ class Mmitienda extends CI_Model{
     public function g_edi_producto($datos,$id_producto){
         $this->db->where('id_producto',$id_producto);
         $this->db->update('producto',$datos);
-        
+    }
+    public function act_sal_producto($sal_producto,$id_producto){
+        $this->db->set('cantidad',$sal_producto);
+        $this->db->where('id_producto',$id_producto);
+        $this->db->update('producto');
     }
     public function eliminar_producto($id_producto){
         $this->db->where('id_producto',$id_producto);

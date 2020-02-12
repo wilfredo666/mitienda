@@ -33,18 +33,24 @@ class Cventa extends CI_Controller {
 
         $id_producto=trim($_POST['producto']);
         $id_cliente=trim($_POST['cliente']);
-        $cantidad=trim($_POST['cantidad']);
+        $cantidad_ven=trim($_POST['cantidad']);
         $total=trim($_POST['total']);
         $pago=trim($_POST['pago']);
         $cambio=trim($_POST['cambio']);
 
         $fecha=date("Y")."-".date("m")."-".date("d");
         $hora=date("H").":".date("i");
+        
+        /*separando en arreglo el id y cantidad del producto*/
+        $producto=explode("-", $id_producto);
+        
+        /*calculando el saldo del producto*/
+        $sal_producto=$producto[1]-$cantidad_ven;
 
         $datos=array(
-            'id_producto'=>$id_producto,
+            'id_producto'=>$producto[0],
             'id_cliente'=>$id_cliente,
-            'cantidad_vent'=>$cantidad,
+            'cantidad_vent'=>$cantidad_ven,
             'total_ven'=>$total,
             'pago_ven'=>$pago,
             'cambio_ven'=>$cambio,
@@ -54,7 +60,8 @@ class Cventa extends CI_Controller {
         );
 
         $this->Mventa->registrar_venta($datos);
-
+        /*actualizando saldo de producto*/
+        $this->Mmitienda->act_sal_producto($sal_producto,$producto[0]);
         $this->ver_venta();
 
     }
@@ -105,10 +112,11 @@ class Cventa extends CI_Controller {
             function buscar_venta(){
         
         $dato=trim($_POST['valor_bus']);   
-        $venta=array('lista_venta'=>$this->Mventa->buscar_venta($dato));
+        $venta=array('lista_venta'=>$this->Mventa->buscar_venta($dato),
+                    'dato'=>$dato);
         $this->load->view('header');
         $this->load->view('menu');
-        $this->load->view('lista_venta',$venta);
+        $this->load->view('lista_venta',$venta,$dato);
         $this->load->view('footer');
         
     }

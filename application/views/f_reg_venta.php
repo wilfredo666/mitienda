@@ -9,8 +9,9 @@
                 foreach($lista_producto as $producto){
                     $id_producto=$producto->id_producto;
                     $nom_producto=$producto->nombre_producto;
+                    $cantidad=$producto->cantidad;
                 ?>
-                <option value="<?php echo $id_producto;?>"><?php echo $nom_producto;?></option>
+                <option value="<?php echo $id_producto;?>-<?php echo $cantidad;?>"><?php echo $nom_producto;?></option>
                 <?php
                 }
                 ?>
@@ -28,9 +29,9 @@
                 ?>
             </select>
             <input type="number" placeholder="Cantidad" name="cantidad" required>
-            <input type="number" placeholder="Total" name="total" required>
-            <input type="number" placeholder="Pago" name="pago" required>
-            <input type="number" placeholder="Cambio" name="cambio" required>
+            <input type="number" placeholder="Total" name="total" required step=".01">
+            <input type="number" placeholder="Pago" name="pago" required step=".01">
+            <input type="number" placeholder="Cambio" name="cambio" required step=".01">
             <div class="sec-btn">
                 <input type="submit" value="REGISTRAR">
                 <input type="button" onclick="history.back()" style="background-color: red;" value="CANCELAR">

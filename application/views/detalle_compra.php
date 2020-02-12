@@ -48,7 +48,7 @@ $hora=$detalle_compra[0]->hora;
 
         </table>
         <br>
-        <a href="javascript:history.back()"> << Volver Atrás</a>
+        <a href="http://localhost/mitienda/index.php/Ccompra/ver_compra"> << Volver Atrás</a>
     </div>
 
 </div>

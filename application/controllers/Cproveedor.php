@@ -90,7 +90,8 @@ class Cproveedor extends CI_Controller {
         function buscar_proveedor(){
         
         $dato=trim($_POST['valor_bus']);   
-        $proveedor=array('lista_proveedores'=>$this->Mproveedor->buscar_proveedor($dato));
+        $proveedor=array('lista_proveedores'=>$this->Mproveedor->buscar_proveedor($dato),
+                        'dato'=>$dato);
         $this->load->view('header');
         $this->load->view('menu');
         $this->load->view('lista_proveedor',$proveedor);

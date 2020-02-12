@@ -34,7 +34,7 @@ $direccion_cli=$detalle_cliente[0]->direccion_cli;
 
         </table>
         <br>
-        <a href="javascript:history.back()"> << Volver Atrás</a>
+        <a href="http://localhost/mitienda/index.php/Ccliente/ver_cliente"> << Volver Atrás</a>
     </div>
 
 </div>

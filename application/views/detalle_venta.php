@@ -38,7 +38,7 @@ $cambio=$detalle_venta[0]->cambio_ven;
 
         </table>
         <br>
-        <a href="javascript:history.back()"> << Volver Atrás</a>
+        <a href="http://localhost/mitienda/index.php/Cventa/ver_venta"> << Volver Atrás</a>
     </div>
 
 </div>

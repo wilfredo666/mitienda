@@ -55,10 +55,7 @@ class Cmitienda extends CI_Controller {
             header('location:http://localhost/mitienda');
         }else{
             if($count>0){
-                $this->load->view('header');
-                $this->load->view('menu');
-                $this->load->view('panel_inicial');
-                $this->load->view('footer');
+                $this->perfil();
             }else{
                 $error=array('mensaje'=>"Datos incorrectos, vuelve a intentarlo !!!");
                 $this->load->view('login',$error);

@@ -13,6 +13,12 @@
     </div>
 
     <div id="lista-productos">
+                   <?php
+            if(isset($dato)){
+                echo '<h2>RESULTADOS DE BUSQUEDA PARA "'.$dato.'"</h2>' ;
+                echo '<a href="http://localhost/mitienda/index.php/Cventa/ver_venta">Listar Ventas</a>';
+            }
+            ?>
         <table>
             <thead class="tb-head">
                 <tr>

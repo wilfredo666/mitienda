@@ -1,12 +1,11 @@
 <?php
-    $user_session=$this->session->userdata('email_usuario');
-    if($user_session!=""){
-        
-    }
-    else
-    {
-        header('location:http://localhost/mitienda');    
-    }
+$user_session=$this->session->userdata('email_usuario');
+if($user_session!=""){
+
+}else{
+    header('Location:http://localhost/mitienda');
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -27,4 +26,4 @@
                 <li><a href="http://localhost/mitienda/index.php/Cmitienda/salir">Salir</a></li>
             </ul>
         </nav>
-<br>
+        <br>

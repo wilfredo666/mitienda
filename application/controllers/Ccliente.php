@@ -95,10 +95,11 @@ class Ccliente extends CI_Controller {
     function buscar_cliente(){
         
         $dato=trim($_POST['valor_bus']);   
-        $cliente=array('lista_clientes'=>$this->Mcliente->buscar_cliente($dato));
+        $cliente=array('lista_clientes'=>$this->Mcliente->buscar_cliente($dato),
+                      'dato'=>$dato);
         $this->load->view('header');
         $this->load->view('menu');
-        $this->load->view('lista_clientes',$cliente);
+        $this->load->view('lista_clientes',$cliente,$dato);
         $this->load->view('footer');
         
     }

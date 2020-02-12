@@ -38,7 +38,7 @@ $hora=$detalle_producto[0]->hora;
             </tr>
         </table>
         <br>
-        <a href="javascript:history.back()"> << Volver Atrás</a>
+        <a href="http://localhost/mitienda/index.php/Cproducto/ver_productos"> << Volver Atrás</a>
     </div>
 
 </div>

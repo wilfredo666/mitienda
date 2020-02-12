@@ -32,7 +32,7 @@ class Ccompra extends CI_Controller {
 
         $id_producto=trim($_POST['producto']);
         $id_proveedor=trim($_POST['proveedor']);
-        $cantidad=trim($_POST['cantidad']);
+        $cantidad_com=trim($_POST['cantidad']);
         $precio_com=trim($_POST['precio_com']);
         $total=trim($_POST['total']);
         $pago=trim($_POST['pago']);
@@ -40,10 +40,15 @@ class Ccompra extends CI_Controller {
 
         $fecha=date("Y")."-".date("m")."-".date("d");
         $hora=date("H").":".date("i");
+        /*separando en arreglo el id y cantidad del producto*/
+        $producto=explode("-", $id_producto);
+
+        /*calculando el saldo del producto*/
+        $sal_producto=$producto[1]+$cantidad_com;
 
         $datos=array(
-            'id_producto'=>$id_producto,
-            'cantidad_com'=>$cantidad,
+            'id_producto'=>$producto[0],
+            'cantidad_com'=>$cantidad_com,
             'precio_com'=>$precio_com,
             'id_proveedor'=>$id_proveedor,
             'total_com'=>$total,
@@ -55,7 +60,9 @@ class Ccompra extends CI_Controller {
         );
 
         $this->Mcompra->registrar_compra($datos);
-
+                /*actualizando saldo de producto*/
+        $this->Mmitienda->act_sal_producto($sal_producto,$producto[0]);
+        
         $this->ver_compra();
 
     }
@@ -92,12 +99,12 @@ class Ccompra extends CI_Controller {
         $this->load->view('mnj_eli_com');
         $this->load->view('footer');
     }
-                function eliminar_compra(){
+    function eliminar_compra(){
         $id_compra=$this->uri->segment(3);
         $this->Mcompra->eliminar_compra($id_compra);
         $this->ver_compra();
     }
-                    function detalle_compra(){
+    function detalle_compra(){
         $id_compra=$this->uri->segment(3);
         $datos=array('detalle_compra'=>$this->Mcompra->detalle_compra($id_compra));
         $this->load->view('header');
@@ -105,14 +112,15 @@ class Ccompra extends CI_Controller {
         $this->load->view('detalle_compra',$datos);
         $this->load->view('footer');
     }
-     function buscar_compra(){
-        
+    function buscar_compra(){
+
         $dato=trim($_POST['valor_bus']);   
-        $compra=array('lista_compra'=>$this->Mcompra->buscar_compra($dato));
+        $compra=array('lista_compra'=>$this->Mcompra->buscar_compra($dato),
+                      'dato'=>$dato);
         $this->load->view('header');
         $this->load->view('menu');
-        $this->load->view('lista_compra',$compra);
+        $this->load->view('lista_compra',$compra,$dato);
         $this->load->view('footer');
-        
+
     }
 }

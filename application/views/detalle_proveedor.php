@@ -28,7 +28,7 @@ $direccion=$detalle_proveedor[0]->direccion_prov;
 
         </table>
         <br>
-        <a href="javascript:history.back()"> << Volver Atrás</a>
+        <a href="http://localhost/mitienda/index.php/Cproveedor/ver_proveedor"> << Volver Atrás</a>
     </div>
 
 </div>
