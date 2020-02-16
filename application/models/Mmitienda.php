@@ -3,7 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Mmitienda extends CI_Model{
     public function registrar_usuario($datos){
-        
+
         $this->db->insert("usuario",$datos);
     }
     public function datos_usuario($email,$pass){
@@ -47,7 +47,8 @@ class Mmitienda extends CI_Model{
         $this->db->where('id_producto',$id_producto);
         $this->db->update('producto');
     }
-    public function eliminar_producto($id_producto){
+    public function eli_producto($id_producto){
+        echo "hola desde modelo ".$id_producto;
         $this->db->where('id_producto',$id_producto);
         $this->db->delete('producto');
     }
@@ -59,14 +60,14 @@ class Mmitienda extends CI_Model{
         return $resultado->result();  
     }
     public function buscar_producto($dato){
-     $this->db->select('*');
+        $this->db->select('*');
         $this->db->from('producto');
         $this->db->where('nombre_producto like','%'.$dato.'%');
         $resultado=$this->db->get();
         return $resultado->result();
     }
-     public function option_producto($id_producto){
-     $this->db->select('nombre_producto');
+    public function option_producto($id_producto){
+        $this->db->select('nombre_producto');
         $this->db->from('producto');
         $this->db->where('id_producto',$id_producto);
         $resultado=$this->db->get();

@@ -13,22 +13,20 @@ class Cproducto extends CI_Controller {
         $datos=array('lista_productos'=>$this->Mmitienda->listar_productos());
         $this->load->view('header');
         $this->load->view('menu');
+        $this->load->view('header_lista');
         $this->load->view('lista_productos',$datos);
         $this->load->view('footer');
     }
     function f_registro_producto(){
-        $this->load->view('header');
-        $this->load->view('menu');
         $this->load->view('f_reg_producto');
-        $this->load->view('footer');
     }
     function registrar_producto(){
 
-        $nom_producto=trim($_POST['nom_producto']);
-        $cantidad=trim($_POST['cantidad']);
-        $detalle=trim($_POST['detalle']);
-        $pre_compra=trim($_POST['pre_compra']);
-        $pre_venta=trim($_POST['pre_venta']);
+     $nom_producto=trim($_POST['nom_producto']);
+     $cantidad=trim($_POST['cantidad']);
+     $detalle=trim($_POST['detalle']);
+     $pre_compra=trim($_POST['pre_compra']);
+     $pre_venta=trim($_POST['pre_venta']);
 
         $fecha=date("Y")."-".date("m")."-".date("d");
         $hora=date("H").":".date("i");
@@ -44,17 +42,15 @@ class Cproducto extends CI_Controller {
         );
 
         $this->Mmitienda->registrar_producto($datos);
-
-        $this->ver_productos();
+        
+        echo "<center class='alert alert-success'>Producto registrado con exito !!!</center>";
 
     } 
     function f_editar_producto(){
-        $id_producto=$this->uri->segment(3);
+        
+       $id_producto=$this->uri->segment(3);
         $producto=array('producto'=>$this->Mmitienda->f_edi_producto($id_producto));
-        $this->load->view('header');
-        $this->load->view('menu');
         $this->load->view('f_edi_producto',$producto);
-        $this->load->view('footer');
     }
     function g_edi_producto(){
         $id_producto=$this->uri->segment(3);
@@ -73,20 +69,16 @@ class Cproducto extends CI_Controller {
         );
 
         $this->Mmitienda->g_edi_producto($datos,$id_producto);
-
-        $this->ver_productos();
+        echo "<center class='alert alert-success'>Producto actualizado con exito !!!</center>";
 
     }
     function f_eliminar_producto(){
-        $this->load->view('header');
-        $this->load->view('menu');
         $this->load->view('mnj_eli_pro');
-        $this->load->view('footer');
     }
     function eliminar_producto(){
-        $id_producto=$this->uri->segment(3);
-        $this->Mmitienda->eliminar_producto($id_producto);
-        $this->ver_productos();
+        $id_producto=trim($_POST['id_producto']);
+        $this->Mmitienda->eli_producto($id_producto);
+        echo "<center class='alert alert-success'>Producto eliminado con exito !!!</center>";
     }
     function detalle_producto(){
         $id_producto=$this->uri->segment(3);
@@ -101,11 +93,7 @@ class Cproducto extends CI_Controller {
         $producto=array(
             'dato'=>$dato,
             'lista_productos'=>$this->Mmitienda->buscar_producto($dato));
-        $this->load->view('header');
-        $this->load->view('menu');
         $this->load->view('lista_productos',$producto,$dato);
-        $this->load->view('footer');
-
     }
 }
 ?>

@@ -13,6 +13,11 @@ if($user_session!=""){
         <meta charset="UTF-8">
         <title>Sistema C&V</title>
         <link rel="stylesheet" href="http://localhost/mitienda/assets/style_login.css">
+        <script src="http://localhost/mitienda/assets/js/jquery.js"></script>
+        <script type="text/javascript" src="http://localhost/mitienda/assets/js/bootstrap.js" ></script>
+        <link rel="stylesheet" type="text/css" href="http://localhost/mitienda/assets/css/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="http://localhost/mitienda/assets/css/bootstrap-theme.css">
+        <script type="text/javascript" src="http://localhost/mitienda/assets/js/script.js" ></script>
     </head>
     <body>
         <nav id="menu-login">

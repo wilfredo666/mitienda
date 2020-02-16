@@ -115,7 +115,7 @@ label.checkbtn{
     font-family: sans-serif;
     background:rgb(0, 113, 188);
     width: 20%;
-    height: 285px;
+    height: 335px;
     float: left;
 }
 .menu-izq nav ul{
@@ -134,7 +134,7 @@ label.checkbtn{
 }
 
 /*vista derecha*/
-.vista-dere{
+.vista_dere{
     width: 80%;
     float: left;
 }
@@ -160,11 +160,11 @@ label.checkbtn{
     margin: solid 1px red;
 }
 /*Estilos panel inicial*/
-.vista-dere #panel {
+.vista_dere #panel {
     height: 300px;
     text-align: center;
 }
-.vista-dere #panel h1{
+.vista_dere #panel h1{
     color: rgb(0, 113, 188);
     line-height: 300px;
 }

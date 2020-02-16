@@ -1,16 +1,29 @@
 <?php 
-    $id_producto=$this->uri->segment(3);
-?>
-      <div class="vista-dere">
-		<div id="mensaje">
-           <br>
-            <p>ELIMINACION DEL PRODUCTO</p>
-            <br>
-			<h2>(*)ESTA SEGURO DE ELIMINAR ESTE PRODUCTO ?</h2>
-			<br>
-			<a href="http://localhost/mitienda/index.php/Cproducto/eliminar_producto/<?php echo $id_producto;?>"><input class="btn-blue" type="submit" value="ELIMINAR"></a>
-			<a href="http://localhost/mitienda/index.php/Cproducto/ver_productos"><input class="btn-red" type="button" value="CANCELAR"></a>
-		</div>
+ $id_producto=$this->uri->segment(3);/* <?php echo $id_producto;?>*/
 
-</div>
-</div>
+?>
+
+    <div>
+        <h2>(*)ESTA SEGURO DE ELIMINAR ESTE PRODUCTO ?</h2>
+    </div>
+        <div class="row">
+        <div class="col-md-12">
+                <div id="respuesta_sm">
+
+                </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-md-6">
+            <input class="btn btn-danger" type="submit" value="ELIMINAR" onclick="EliProducto(<?php echo $id_producto;?>)">
+        </div>
+        <div class="form-group col-md-6">
+            <input class="btn btn-primary" type="button" value="CANCELAR">
+        </div>
+    </div>
+
+
+
+
+
+
