@@ -2,6 +2,11 @@
     margin: 0;
     padding: 0;
 }
+/*Estilos para las imagenes a cargar*/
+img{
+    width: 120px;
+    height: 100px;
+}
 /*Estilos header*/
 #menu-login{
     font-family: sans-serif;

@@ -24,10 +24,36 @@ class Cventa extends CI_Controller {
             'lista_producto'=>$this->Mmitienda->listar_productos(),
             'lista_cliente'=>$this->Mcliente->listar_cliente()
         );
-        $this->load->view('header');
-        $this->load->view('menu');
         $this->load->view('f_reg_venta',$datos);
-        $this->load->view('footer');
+    }
+    function agregar_venta(){
+        //trayendo datos enviado por por POST de ajax
+        $nom_producto=trim($_POST['producto_nom']);
+        $pre_producto=trim($_POST['producto_pre']);
+        
+        $id_producto=trim($_POST['id_producto']);
+        $id_cliente=trim($_POST['id_cliente']);
+        $cantidad=trim($_POST['cantidad']);
+        $importe=$cantidad*$pre_producto;
+        
+        $fecha=date("Y")."-".date("m")."-".date("d");
+        $hora=date("H").":".date("i");
+
+?>
+<script type="text/javascript">
+
+    obj_venta('<?php echo $nom_producto; ?>',
+              '<?php echo $pre_producto; ?>',
+              '<?php echo $id_producto; ?>',
+              '<?php echo $id_cliente; ?>',
+              '<?php echo $cantidad; ?>',
+              '<?php echo $importe; ?>',
+             '<?php echo $fecha; ?>',
+             '<?php echo $hora; ?>');	
+
+</script>
+<?php
+
     }
     function registrar_venta(){
 
@@ -40,10 +66,10 @@ class Cventa extends CI_Controller {
 
         $fecha=date("Y")."-".date("m")."-".date("d");
         $hora=date("H").":".date("i");
-        
+
         /*separando en arreglo el id y cantidad del producto*/
         $producto=explode("-", $id_producto);
-        
+
         /*calculando el saldo del producto*/
         $sal_producto=$producto[1]-$cantidad_ven;
 
@@ -86,22 +112,22 @@ class Cventa extends CI_Controller {
             'pago_ven'=>$pago,
             'cambio_ven'=>$cambio
         );
-        
+
         $this->Mventa->g_edi_venta($datos,$id_venta);
         $this->ver_venta();
     }
-           function f_eliminar_venta(){
+    function f_eliminar_venta(){
         $this->load->view('header');
         $this->load->view('menu');
         $this->load->view('mnj_eli_ven');
         $this->load->view('footer');
     }
-            function eliminar_venta(){
+    function eliminar_venta(){
         $id_venta=$this->uri->segment(3);
         $this->Mventa->eliminar_venta($id_venta);
         $this->ver_venta();
     }
-                function detalle_venta(){
+    function detalle_venta(){
         $id_venta=$this->uri->segment(3);
         $datos=array('detalle_venta'=>$this->Mventa->detalle_venta($id_venta));
         $this->load->view('header');
@@ -109,15 +135,15 @@ class Cventa extends CI_Controller {
         $this->load->view('detalle_venta',$datos);
         $this->load->view('footer');
     }
-            function buscar_venta(){
-        
+    function buscar_venta(){
+
         $dato=trim($_POST['valor_bus']);   
         $venta=array('lista_venta'=>$this->Mventa->buscar_venta($dato),
-                    'dato'=>$dato);
+                     'dato'=>$dato);
         $this->load->view('header');
         $this->load->view('menu');
         $this->load->view('lista_venta',$venta,$dato);
         $this->load->view('footer');
-        
+
     }
 }

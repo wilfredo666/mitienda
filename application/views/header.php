@@ -18,6 +18,30 @@ if($user_session!=""){
         <link rel="stylesheet" type="text/css" href="http://localhost/mitienda/assets/css/bootstrap.css">
         <link rel="stylesheet" type="text/css" href="http://localhost/mitienda/assets/css/bootstrap-theme.css">
         <script type="text/javascript" src="http://localhost/mitienda/assets/js/script.js" ></script>
+        <style type="text/css">
+            Full screen Modal 
+            .fullscreen-modal .modal-dialog {
+                margin: 0;
+                margin-right: auto;
+                margin-left: auto;
+                width: 100%;
+            }
+            @media (min-width: 768px) {
+                .fullscreen-modal .modal-dialog {
+                    width: 750px;
+                }
+            }
+            @media (min-width: 992px) {
+                .fullscreen-modal .modal-dialog {
+                    width: 970px;
+                }
+            }
+            @media (min-width: 1200px) {
+                .fullscreen-modal .modal-dialog {
+                    width: 1170px;
+                }
+            }
+        </style>
     </head>
     <body>
         <nav id="menu-login">

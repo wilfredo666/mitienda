@@ -51,6 +51,7 @@ class Cmitienda extends CI_Controller {
 
         $this->form_validation->set_rules('correo', 'Contraseña', 'required');
         $this->form_validation->set_rules('clave', 'Contraseña', 'required');
+
         if($this->form_validation->run()==false){
             header('location:http://localhost/mitienda');
         }else{

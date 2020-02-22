@@ -1,5 +1,5 @@
 
-<form action="http://localhost/mitienda/index.php/Cproducto/registrar_producto" method="post">
+<form>
     <h2>REGISTRO DE PRODUCTO</h2>
     <p>(*)DEBE LLENAR TODOS LOS CAMPOS</p>
     <div class="row">
@@ -23,12 +23,22 @@
         <div class="form-group col-md-6">
             <textarea class="form-control" placeholder="Detalle" id="detalle" cols="30" rows="5"></textarea>
         </div>
+        
+        <form method='post' id='formulario' enctype='multipart/form-data'>
+           <input type='hidden' class='form-control' id='img_inmueble'>
+            <div class="form-group col-md-6">
+                <label for="">Imagen de portada</label>
+                <input class="form-control" type="file" name="portada_p" onchange="cargar(event);">
+                <div id="preview"></div>
+            </div>
+        </form>
+
     </div>
     <div class="row">
         <div class="col-md-12">
-                <div id="respuesta_form">
+            <div id="respuesta_form">
 
-                </div>
+            </div>
         </div>
     </div>
 

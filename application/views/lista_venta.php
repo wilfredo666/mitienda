@@ -5,7 +5,7 @@
                 <form method="post" action="http://localhost/mitienda/index.php/Cventa/buscar_venta">
                     <li><input class="input-text" type="text" placeholder="Buscar venta" name="valor_bus"></li>
                     <li><input class="btn-green" type="submit" value="Buscar"></li>
-                    <li style="float: right;"><a  href="http://localhost/mitienda/index.php/Cventa/f_reg_venta"><input class="btn-blue" type="button" value="Nuevo"></a></li>
+                    <li style="float: right;"><input class="btn-blue" type="button" onclick="MRegVenta();" value="Nuevo"></li>
                 </form>
 
             </ul>
