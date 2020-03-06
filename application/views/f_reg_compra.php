@@ -18,7 +18,7 @@
             </select>
             <select name="proveedor">
                 <option value="">Seleccionar proveedor</option>
-                <?php 
+                <?php
                 foreach($lista_proveedor as $proveedor){
                     $id_proveedor=$proveedor->id_proveedor;
                     $nom_proveedor=$proveedor->empresa;

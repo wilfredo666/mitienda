@@ -24,13 +24,13 @@ function ingresar(){
 
 //Producto
 function LLamarModal(){
-    $('#modal_cont').modal('show');
+    $('#modal_fs').modal('show');
     var obj="";
     $.ajax({type:"POST",
             url:"http://localhost/mitienda/index.php/Cproducto/f_registro_producto",
             data:obj,
             success:function(data){
-                $("#formulario").html(data);
+                $("#formulario_fs").html(data);
             }
            }
           )

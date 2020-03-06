@@ -19,7 +19,7 @@ if($user_session!=""){
         <link rel="stylesheet" type="text/css" href="http://localhost/mitienda/assets/css/bootstrap-theme.css">
         <script type="text/javascript" src="http://localhost/mitienda/assets/js/script.js" ></script>
         <style type="text/css">
-            Full screen Modal 
+            /*Full screen Modal*/ 
             .fullscreen-modal .modal-dialog {
                 margin: 0;
                 margin-right: auto;
